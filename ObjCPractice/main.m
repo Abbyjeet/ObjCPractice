@@ -1,22 +1,26 @@
-//
-//  main.m
-//  ObjCPractice
-//
-//  Created by Abhijit on 7/10/13.
-//  Copyright (c) 2013 Abhijit. All rights reserved.
-//
+#import "stdio.h"
+#import "Fraction.h"
 
-#import <Foundation/Foundation.h>
-
-int main(int argc, const char * argv[])
-{
-
+int main(int argc, const char* argv[]){
+    //ARC block for Garbage Collection
     @autoreleasepool {
+        printf("Hello World!\n");
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        //Create a new instance
+        //Constructor called with Parameters
+        Fraction *frac = [[Fraction alloc]initWithNumerator:1 AndDenominator:3];
         
+//        //Set the values
+//        [frac setNumerator:2];
+//        [frac setDenominator:4];
+        
+        //Print it
+        printf("The fraction is: ");
+        [frac print];
+        
+        //Call Extension method using Category
+        [frac ExtensionMethod];
+        
+        return 0;
     }
-    return 0;
 }
-
